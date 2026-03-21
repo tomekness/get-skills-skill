@@ -5,6 +5,22 @@ get-skills-skill lets OpenCode install skills from any repo via a natural-langua
 
 In short: this skill installs OpenCode skills via `npx skills add`.
 
+### Prompt examples (OpenCode):
+
+- "Install the skill from https://github.com/anthropics/skills --skill pdf"
+- "Install the skill from https://github.com/anthropics/skills global"
+- "Install the skill from https://github.com/anthropics/skills local"
+
+The skill parses natural language input, detects `--skill <name>` and optional
+`global`/`local`. If the target is missing, it prompts interactively.
+
+
+### Platform note
+
+- The skill is implemented cross-platform (temp dir via `os.tmpdir()`).
+- Tested so far only on Linux.
+
+
 ### Install (OpenCode)
 
 - Place the folder under `~/.config/opencode/skills/get-skills-skill/`
@@ -35,21 +51,7 @@ Option: allow all skills (wildcard)
   }
 }
 
-
-### Platform note
-
-- The skill is implemented cross-platform (temp dir via `os.tmpdir()`).
-- Tested so far only on Linux.
-
-
-### Prompt examples (OpenCode):
-
-- "Install the skill from https://github.com/anthropics/skills --skill pdf"
-- "Install the skill from https://github.com/anthropics/skills global"
-- "Install the skill from https://github.com/anthropics/skills local"
-
-The skill parses natural language input, detects `--skill <name>` and optional
-`global`/`local`. If the target is missing, it prompts interactively.
+Reference: https://opencode.ai/docs/de/skills/
 
 ### Where are skills stored?
 
@@ -73,8 +75,6 @@ folder and updates the `permission.skill` section in the matching
 
 Return note: the skill returns an object with `success`, `message`, optional
 `error`, and on success `skill`, `target`, `config`. OpenCode displays the result.
-
-Reference: https://opencode.ai/docs/de/skills/
 
 
 ### Output examples
