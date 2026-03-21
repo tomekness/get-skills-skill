@@ -1,7 +1,11 @@
 get-skills-skill
 ================
 
-Install (OpenCode)
+get-skills-skill lets OpenCode install skills from any repo via a natural-language prompt, handling global/local placement and opencode.json updates automatically.
+
+In short: this skill installs OpenCode skills via `npx skills add`.
+
+### Install (OpenCode)
 
 - Place the folder under `~/.config/opencode/skills/get-skills-skill/`
   (or locally under `./.opencode/skills/get-skills-skill/`).
@@ -31,12 +35,14 @@ Option: allow all skills (wildcard)
   }
 }
 
-Platform note
+
+### Platform note
 
 - The skill is implemented cross-platform (temp dir via `os.tmpdir()`).
 - Tested so far only on Linux.
 
-Prompt examples (OpenCode):
+
+### Prompt examples (OpenCode):
 
 - "Install the skill from https://github.com/anthropics/skills --skill pdf"
 - "Install the skill from https://github.com/anthropics/skills global"
@@ -45,9 +51,7 @@ Prompt examples (OpenCode):
 The skill parses natural language input, detects `--skill <name>` and optional
 `global`/`local`. If the target is missing, it prompts interactively.
 
-In short: this skill installs OpenCode skills via `npx skills add`.
-
-Where are skills stored?
+### Where are skills stored?
 
 - Global (user-wide):
   - Skill folder: `~/.config/opencode/skills/<skill-name>`
@@ -61,7 +65,8 @@ After download, the implementation moves the extracted skill into the target
 folder and updates the `permission.skill` section in the matching
 `opencode.json` with `"<skill-name>": "allow"`.
 
-Install flow (short):
+
+### Install flow (short):
 - npx downloads and extracts the repo into a temporary directory (usually `<tmp>/skills-*`).
 - The skill is moved from the temp folder into the chosen target.
 - The matching `opencode.json` is updated with `"<skill-name>": "allow"`.
@@ -71,7 +76,8 @@ Return note: the skill returns an object with `success`, `message`, optional
 
 Reference: https://opencode.ai/docs/de/skills/
 
-Output examples
+
+### Output examples
 
 Success:
 {
