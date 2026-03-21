@@ -8,8 +8,8 @@ In short: this skill installs OpenCode skills via `npx skills add`.
 ### Prompt examples (OpenCode):
 
 - "Install the skill from https://github.com/anthropics/skills --skill pdf"
-- "Install the skill from https://github.com/anthropics/skills global"
-- "Install the skill from https://github.com/anthropics/skills local"
+- "Install the skill from https://github.com/anthropics/skills --skill pdf global"
+- "Install the skill from https://github.com/anthropics/skills --skill pdf local"
 
 The skill parses natural language input, detects `--skill <name>` and optional
 `global`/`local`. If the target is missing, it prompts interactively.
