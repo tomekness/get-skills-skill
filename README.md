@@ -1,7 +1,7 @@
 get-skills-skill
 ================
 
-An OpenCode skill that installs other OpenCode skills from any GitHub repo — directly from within OpenCode, without leaving the terminal session.
+An OpenCode skill that installs other OpenCode skills from any GitHub repo — directly from within OpenCode, without leaving the terminal session or the web interface.
 
 **When to use this:** For skills that only contain a `SKILL.md` and have no own `npx` installer. If a skill already has `npx github:<user>/<repo>`, use that directly instead. This skill is the universal fallback for anything else.
 
