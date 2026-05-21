@@ -5,7 +5,9 @@ get-skills-skill lets OpenCode install skills from any repo via a natural-langua
 
 In short: this skill installs OpenCode skills via `npx skills add`.
 
-### Install via npx
+## Install
+
+#### Via npx (recommended)
 
 ```bash
 # Interactive — asks global or local
@@ -14,6 +16,18 @@ npx github:tomekness/get-skills-skill
 # Or specify directly
 npx github:tomekness/get-skills-skill global
 npx github:tomekness/get-skills-skill local
+```
+
+#### Manually
+
+```bash
+# Global
+mkdir -p ~/.config/opencode/skills/get-skills-skill
+cp SKILL.md skill.js ~/.config/opencode/skills/get-skills-skill/
+
+# Or project-local
+mkdir -p .opencode/skills/get-skills-skill
+cp SKILL.md skill.js .opencode/skills/get-skills-skill/
 ```
 
 ### Prompt examples (OpenCode):
