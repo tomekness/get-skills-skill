@@ -1,0 +1,13 @@
+{
+  "name": "get-skills-skill",
+  "version": "1.0.0",
+  "description": "Install OpenCode skills from any repo — handles global/local placement and opencode.json updates",
+  "bin": {
+    "get-skills-skill": "./install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomekness/get-skills-skill"
+  },
+  "license": "MIT"
+}
