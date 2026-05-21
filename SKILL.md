@@ -1,29 +1,16 @@
 ---
+name: get-skills-skill
+description: "OpenCode only. Use this skill when the user wants to install, add, or get a skill in OpenCode — either globally (~/.config/opencode/skills/) or locally in the current project (.opencode/skills/). Always asks global vs local if not specified. Triggers on: \"install the skill X\", \"add the skill from this repo\", \"get the skill X globally\", \"add skill X to this project\", \"install skill from URL\", or any request to install an OpenCode skill."
+compatibility: opencode
+allowed-tools: [Bash, Read, Write]
 applyTo: '**'
-description: |
-  get-skills-skill – Installs OpenCode skills semi-automatically and asks for
-  global/local if not explicitly specified in the prompt.
-
-  - Fetches skills via npx skills add (non-interactive when possible)
-  - Detects global vs local target, prompts if missing
-  - Moves the skill into ~/.config/opencode/skills or the project .opencode/skills
-  - Updates the corresponding opencode.json
-  - Supports repos and subskills (e.g., --skill pdf)
-  - Interacts via prompt when required inputs are missing
-
-usage:
-  - "Install the skill <name>"
-  - "Add the skill <name> locally"
-  - "Add the skill <name> globally"
-  - Prompts if global/local is missing
-
-automation:
-  - Resolves target
-  - Downloads via npx skills add
-  - Moves skill into the target and updates opencode.json
-  - Logs success/failure
-
-impl_note: Node.js script or OpenCode skill reacting to prompts (skill mode, no CLI needed).
+usage: |
+  install the skill from <repo-url>
+  install the skill from <repo-url> globally
+  add the skill <name> to this project
+  get the skill <name> --skill pdf
+  install skill X globally
+  add this skill locally
 ---
 
 # get-skills-skill (interactive)
